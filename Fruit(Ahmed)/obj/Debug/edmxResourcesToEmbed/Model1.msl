@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FruitModelStoreContainer" CdmEntityContainer="FruitEntities">
+    <FunctionImportMapping FunctionImportName="delecust" FunctionName="FruitModel.Store.delecust" />
+    <FunctionImportMapping FunctionImportName="deletecart" FunctionName="FruitModel.Store.deletecart" />
+    <FunctionImportMapping FunctionImportName="DeleteProduct" FunctionName="FruitModel.Store.DeleteProduct" />
+    <FunctionImportMapping FunctionImportName="UpdateProduct" FunctionName="FruitModel.Store.UpdateProduct" />
+    <FunctionImportMapping FunctionImportName="SelectCity1" FunctionName="FruitModel.Store.SelectCity1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FruitModel.SelectCity1_Result">
+          <ScalarProperty Name="productName" ColumnName="productName" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="product_ID" ColumnName="product_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectCity2" FunctionName="FruitModel.Store.SelectCity2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FruitModel.SelectCity2_Result">
+          <ScalarProperty Name="productName" ColumnName="productName" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="product_ID" ColumnName="product_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectCity3" FunctionName="FruitModel.Store.SelectCity3">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FruitModel.SelectCity3_Result">
+          <ScalarProperty Name="productName" ColumnName="productName" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="product_ID" ColumnName="product_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Carts">
+      <EntityTypeMapping TypeName="FruitModel.Cart">
+        <MappingFragment StoreEntitySet="Cart">
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="Cart_ID" ColumnName="Cart_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cart_Component">
+      <EntityTypeMapping TypeName="FruitModel.Cart_Component">
+        <MappingFragment StoreEntitySet="Cart_Component">
+          <ScalarProperty Name="Cart_ID" ColumnName="Cart_ID" />
+          <ScalarProperty Name="Total_Price" ColumnName="Total_Price" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Cart_ComponentID" ColumnName="Cart_ComponentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="FruitModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="category_ID" ColumnName="category_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cityes">
+      <EntityTypeMapping TypeName="FruitModel.Citye">
+        <MappingFragment StoreEntitySet="Cityes">
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="FruitModel.Customer">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="customer_ID" ColumnName="customer_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Masseges">
+      <EntityTypeMapping TypeName="FruitModel.Massege">
+        <MappingFragment StoreEntitySet="Masseges">
+          <ScalarProperty Name="Masseges" ColumnName="Masseges" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="MassegeID" ColumnName="MassegeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="FruitModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="QuarterID" ColumnName="QuarterID" />
+          <ScalarProperty Name="lati" ColumnName="lati" />
+          <ScalarProperty Name="longi" ColumnName="longi" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="driveDate" ColumnName="driveDate" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="customer_ID" ColumnName="customer_ID" />
+          <ScalarProperty Name="order_ID" ColumnName="order_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_Component">
+      <EntityTypeMapping TypeName="FruitModel.Order_Component">
+        <MappingFragment StoreEntitySet="Order_Component">
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+          <ScalarProperty Name="Order_ComponentID" ColumnName="Order_ComponentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="FruitModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="NoOrder" ColumnName="NoOrder" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="DeleteProduct" ColumnName="DeleteProduct" />
+          <ScalarProperty Name="category_ID" ColumnName="category_ID" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="productName" ColumnName="productName" />
+          <ScalarProperty Name="product_ID" ColumnName="product_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quarters">
+      <EntityTypeMapping TypeName="FruitModel.Quarter">
+        <MappingFragment StoreEntitySet="Quarter">
+          <ScalarProperty Name="QuarterName" ColumnName="QuarterName" />
+          <ScalarProperty Name="CItyID" ColumnName="CItyID" />
+          <ScalarProperty Name="QuarterID" ColumnName="QuarterID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rates">
+      <EntityTypeMapping TypeName="FruitModel.Rate">
+        <MappingFragment StoreEntitySet="Rate">
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="rate_ID" ColumnName="rate_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

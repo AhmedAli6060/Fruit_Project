@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FruitModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="FruitEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="delecust">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="deletecart" />
+    <FunctionImport Name="DeleteProduct">
+      <Parameter Name="product_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SelectFruits" ReturnType="Collection(FruitModel.SelectFruits_Result)" />
+    <FunctionImport Name="SelectProducts" ReturnType="Collection(FruitModel.SelectProducts_Result)" />
+    <FunctionImport Name="SelectVegs" ReturnType="Collection(FruitModel.SelectVegs_Result)" />
+    <FunctionImport Name="UpdateProduct">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="price" Mode="In" Type="String" />
+      <Parameter Name="quantity" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SelectCity1" ReturnType="Collection(FruitModel.SelectCity1_Result)" />
+    <FunctionImport Name="SelectCity2" ReturnType="Collection(FruitModel.SelectCity2_Result)" />
+    <FunctionImport Name="SelectCity3" ReturnType="Collection(FruitModel.SelectCity3_Result)" />
+    <EntitySet Name="Carts" EntityType="FruitModel.Cart" />
+    <EntitySet Name="Cart_Component" EntityType="FruitModel.Cart_Component" />
+    <EntitySet Name="Categories" EntityType="FruitModel.Category" />
+    <EntitySet Name="Cityes" EntityType="FruitModel.Citye" />
+    <EntitySet Name="Customers" EntityType="FruitModel.Customer" />
+    <EntitySet Name="Masseges" EntityType="FruitModel.Massege" />
+    <EntitySet Name="Orders" EntityType="FruitModel.Order" />
+    <EntitySet Name="Order_Component" EntityType="FruitModel.Order_Component" />
+    <EntitySet Name="Products" EntityType="FruitModel.Product" />
+    <EntitySet Name="Quarters" EntityType="FruitModel.Quarter" />
+    <EntitySet Name="Rates" EntityType="FruitModel.Rate" />
+    <AssociationSet Name="FK_Cart_Component_Cart" Association="FruitModel.FK_Cart_Component_Cart">
+      <End Role="Cart" EntitySet="Carts" />
+      <End Role="Cart_Component" EntitySet="Cart_Component" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cart_Customers" Association="FruitModel.FK_Cart_Customers">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Cart" EntitySet="Carts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cart_Component_Product" Association="FruitModel.FK_Cart_Component_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Cart_Component" EntitySet="Cart_Component" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Cityes" Association="FruitModel.FK_Order_Cityes">
+      <End Role="Citye" EntitySet="Cityes" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Cityes" Association="FruitModel.FK_Product_Cityes">
+      <End Role="Citye" EntitySet="Cityes" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Quarter_Cityes1" Association="FruitModel.FK_Quarter_Cityes1">
+      <End Role="Citye" EntitySet="Cityes" />
+      <End Role="Quarter" EntitySet="Quarters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Component_Order" Association="FruitModel.FK_Order_Component_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="Order_Component" EntitySet="Order_Component" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Quarter" Association="FruitModel.FK_Order_Quarter">
+      <End Role="Quarter" EntitySet="Quarters" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Component_Product" Association="FruitModel.FK_Order_Component_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Order_Component" EntitySet="Order_Component" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="SelectFruits_Result">
+    <Property Type="String" Name="productName" Nullable="false" />
+    <Property Type="String" Name="price" Nullable="false" />
+    <Property Type="String" Name="image" Nullable="false" />
+    <Property Type="Int32" Name="product_ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SelectProducts_Result">
+    <Property Type="String" Name="productName" Nullable="false" />
+    <Property Type="String" Name="price" Nullable="false" />
+    <Property Type="String" Name="image" Nullable="false" />
+    <Property Type="Int32" Name="product_ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SelectVegs_Result">
+    <Property Type="String" Name="productName" Nullable="false" />
+    <Property Type="String" Name="price" Nullable="false" />
+    <Property Type="String" Name="image" Nullable="false" />
+    <Property Type="Int32" Name="product_ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SelectCity1_Result">
+    <Property Type="String" Name="productName" Nullable="false" />
+    <Property Type="String" Name="price" Nullable="false" />
+    <Property Type="String" Name="image" Nullable="false" />
+    <Property Type="Int32" Name="product_ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SelectCity2_Result">
+    <Property Type="String" Name="productName" Nullable="false" />
+    <Property Type="String" Name="price" Nullable="false" />
+    <Property Type="String" Name="image" Nullable="false" />
+    <Property Type="Int32" Name="product_ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SelectCity3_Result">
+    <Property Type="String" Name="productName" Nullable="false" />
+    <Property Type="String" Name="price" Nullable="false" />
+    <Property Type="String" Name="image" Nullable="false" />
+    <Property Type="Int32" Name="product_ID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="Cart">
+    <Key>
+      <PropertyRef Name="Cart_ID" />
+    </Key>
+    <Property Name="Cart_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Customer_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cart_Component" Relationship="FruitModel.FK_Cart_Component_Cart" FromRole="Cart" ToRole="Cart_Component" />
+    <NavigationProperty Name="Customer" Relationship="FruitModel.FK_Cart_Customers" FromRole="Cart" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="Cart_Component">
+    <Key>
+      <PropertyRef Name="Cart_ComponentID" />
+    </Key>
+    <Property Name="Cart_ComponentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Product_ID" Type="Int32" Nullable="false" />
+    <Property Name="quantity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Total_Price" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Cart_ID" Type="Int32" />
+    <NavigationProperty Name="Cart" Relationship="FruitModel.FK_Cart_Component_Cart" FromRole="Cart_Component" ToRole="Cart" />
+    <NavigationProperty Name="Product" Relationship="FruitModel.FK_Cart_Component_Product" FromRole="Cart_Component" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="category_ID" />
+    </Key>
+    <Property Name="category_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Citye">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Orders" Relationship="FruitModel.FK_Order_Cityes" FromRole="Citye" ToRole="Order" />
+    <NavigationProperty Name="Products" Relationship="FruitModel.FK_Product_Cityes" FromRole="Citye" ToRole="Product" />
+    <NavigationProperty Name="Quarters" Relationship="FruitModel.FK_Quarter_Cityes1" FromRole="Citye" ToRole="Quarter" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="customer_ID" />
+    </Key>
+    <Property Name="customer_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="role" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="Mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Carts" Relationship="FruitModel.FK_Cart_Customers" FromRole="Customer" ToRole="Cart" />
+  </EntityType>
+  <EntityType Name="Massege">
+    <Key>
+      <PropertyRef Name="MassegeID" />
+    </Key>
+    <Property Name="MassegeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Masseges" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="order_ID" />
+    </Key>
+    <Property Name="order_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="customer_ID" Type="Int32" Nullable="false" />
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+    <Property Name="driveDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TotalPrice" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OrderNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="longi" Type="Double" />
+    <Property Name="lati" Type="Double" />
+    <Property Name="QuarterID" Type="Int32" />
+    <NavigationProperty Name="Citye" Relationship="FruitModel.FK_Order_Cityes" FromRole="Order" ToRole="Citye" />
+    <NavigationProperty Name="Order_Component" Relationship="FruitModel.FK_Order_Component_Order" FromRole="Order" ToRole="Order_Component" />
+    <NavigationProperty Name="Quarter" Relationship="FruitModel.FK_Order_Quarter" FromRole="Order" ToRole="Quarter" />
+  </EntityType>
+  <EntityType Name="Order_Component">
+    <Key>
+      <PropertyRef Name="Order_ComponentID" />
+    </Key>
+    <Property Name="Order_ComponentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Order_ID" Type="Int32" Nullable="false" />
+    <Property Name="Product_ID" Type="Int32" Nullable="false" />
+    <Property Name="quantity" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TotalPrice" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Order" Relationship="FruitModel.FK_Order_Component_Order" FromRole="Order_Component" ToRole="Order" />
+    <NavigationProperty Name="Product" Relationship="FruitModel.FK_Order_Component_Product" FromRole="Order_Component" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="product_ID" />
+    </Key>
+    <Property Name="product_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="productName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="image" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="quantity" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="category_ID" Type="Int32" Nullable="false" />
+    <Property Name="DeleteProduct" Type="Boolean" />
+    <Property Name="CityID" Type="Int32" />
+    <Property Name="NoOrder" Type="Int32" />
+    <NavigationProperty Name="Cart_Component" Relationship="FruitModel.FK_Cart_Component_Product" FromRole="Product" ToRole="Cart_Component" />
+    <NavigationProperty Name="Citye" Relationship="FruitModel.FK_Product_Cityes" FromRole="Product" ToRole="Citye" />
+    <NavigationProperty Name="Order_Component" Relationship="FruitModel.FK_Order_Component_Product" FromRole="Product" ToRole="Order_Component" />
+  </EntityType>
+  <EntityType Name="Quarter">
+    <Key>
+      <PropertyRef Name="QuarterID" />
+    </Key>
+    <Property Name="QuarterID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CItyID" Type="Int32" Nullable="false" />
+    <Property Name="QuarterName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Citye" Relationship="FruitModel.FK_Quarter_Cityes1" FromRole="Quarter" ToRole="Citye" />
+    <NavigationProperty Name="Orders" Relationship="FruitModel.FK_Order_Quarter" FromRole="Quarter" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Rate">
+    <Key>
+      <PropertyRef Name="rate_ID" />
+    </Key>
+    <Property Name="rate_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="comment" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Cart_Component_Cart">
+    <End Type="FruitModel.Cart" Role="Cart" Multiplicity="0..1" />
+    <End Type="FruitModel.Cart_Component" Role="Cart_Component" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cart">
+        <PropertyRef Name="Cart_ID" />
+      </Principal>
+      <Dependent Role="Cart_Component">
+        <PropertyRef Name="Cart_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cart_Customers">
+    <End Type="FruitModel.Customer" Role="Customer" Multiplicity="1" />
+    <End Type="FruitModel.Cart" Role="Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="customer_ID" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="Customer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cart_Component_Product">
+    <End Type="FruitModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="FruitModel.Cart_Component" Role="Cart_Component" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="product_ID" />
+      </Principal>
+      <Dependent Role="Cart_Component">
+        <PropertyRef Name="Product_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Cityes">
+    <End Type="FruitModel.Citye" Role="Citye" Multiplicity="1" />
+    <End Type="FruitModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Citye">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Cityes">
+    <End Type="FruitModel.Citye" Role="Citye" Multiplicity="0..1" />
+    <End Type="FruitModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Citye">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Quarter_Cityes1">
+    <End Type="FruitModel.Citye" Role="Citye" Multiplicity="1" />
+    <End Type="FruitModel.Quarter" Role="Quarter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Citye">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="Quarter">
+        <PropertyRef Name="CItyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Component_Order">
+    <End Type="FruitModel.Order" Role="Order" Multiplicity="1" />
+    <End Type="FruitModel.Order_Component" Role="Order_Component" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="order_ID" />
+      </Principal>
+      <Dependent Role="Order_Component">
+        <PropertyRef Name="Order_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Quarter">
+    <End Type="FruitModel.Quarter" Role="Quarter" Multiplicity="0..1" />
+    <End Type="FruitModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quarter">
+        <PropertyRef Name="QuarterID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="QuarterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Component_Product">
+    <End Type="FruitModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="FruitModel.Order_Component" Role="Order_Component" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="product_ID" />
+      </Principal>
+      <Dependent Role="Order_Component">
+        <PropertyRef Name="Product_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,508 @@
+USE [Fruit]
+GO
+/****** Object:  Table [dbo].[Customers]    Script Date: 01/03/2017 16:01:02 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Customers](
+	[customer_ID] [int] IDENTITY(1,1) NOT NULL,
+	[userName] [nvarchar](max) NOT NULL,
+	[password] [nvarchar](max) NOT NULL,
+	[Email] [nvarchar](max) NOT NULL,
+	[role] [nvarchar](max) NOT NULL,
+	[Active] [bit] NULL,
+	[Mobile] [nvarchar](max) NULL,
+ CONSTRAINT [PK_Customers] PRIMARY KEY CLUSTERED 
+(
+	[customer_ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Customers] ON
+INSERT [dbo].[Customers] ([customer_ID], [userName], [password], [Email], [role], [Active], [Mobile]) VALUES (1, N'Admin', N'123321', N'Adnin@yahoo.com', N'Admin', 1, N'0108928837')
+INSERT [dbo].[Customers] ([customer_ID], [userName], [password], [Email], [role], [Active], [Mobile]) VALUES (2, N'Noha', N'345', N'noha@yahoo.com', N'User', 0, N'01014352278')
+INSERT [dbo].[Customers] ([customer_ID], [userName], [password], [Email], [role], [Active], [Mobile]) VALUES (3, N'ahmed', N'666', N'ahmed@yahoo.com', N'User', 0, N'0108928837')
+INSERT [dbo].[Customers] ([customer_ID], [userName], [password], [Email], [role], [Active], [Mobile]) VALUES (4, N'Ayman', N'123', N'ama@yahoo.com', N'User', 0, N'0108928837')
+INSERT [dbo].[Customers] ([customer_ID], [userName], [password], [Email], [role], [Active], [Mobile]) VALUES (5, N'kareem', N'1234', N'AA@yahoo.com', N'User', 1, N'01111111111')
+INSERT [dbo].[Customers] ([customer_ID], [userName], [password], [Email], [role], [Active], [Mobile]) VALUES (6, N'Noha', N'123', N'ahmed@yahoo.com', N'User', 1, N'01014352278')
+INSERT [dbo].[Customers] ([customer_ID], [userName], [password], [Email], [role], [Active], [Mobile]) VALUES (7, N'«Õ„œ', N'1234', N'noha@yahoo.com', N'User', 1, N'01014352278')
+INSERT [dbo].[Customers] ([customer_ID], [userName], [password], [Email], [role], [Active], [Mobile]) VALUES (12, N'Nohaelmenofy', N'901', N'nohaelmenofy94@gmail.com', N'User', 1, N'0108928837')
+INSERT [dbo].[Customers] ([customer_ID], [userName], [password], [Email], [role], [Active], [Mobile]) VALUES (13, N'dina', N'888', N'dina94@gmail.com', N'User', 1, N'01016384499')
+INSERT [dbo].[Customers] ([customer_ID], [userName], [password], [Email], [role], [Active], [Mobile]) VALUES (14, N'√Õ„œ «·‘Â«·Ì', N'123321', N'ahmed.elshihaly6060@gmail.com', N'User', 1, N'01008044665')
+SET IDENTITY_INSERT [dbo].[Customers] OFF
+/****** Object:  Table [dbo].[Cityes]    Script Date: 01/03/2017 16:01:02 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Cityes](
+	[CityID] [int] IDENTITY(1,1) NOT NULL,
+	[CityName] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK_Table_1] PRIMARY KEY CLUSTERED 
+(
+	[CityID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Cityes] ON
+INSERT [dbo].[Cityes] ([CityID], [CityName]) VALUES (1, N'Œ„Ì” „‘Ìÿ')
+INSERT [dbo].[Cityes] ([CityID], [CityName]) VALUES (2, N'√»Â«')
+INSERT [dbo].[Cityes] ([CityID], [CityName]) VALUES (3, N'«·ÿ«∆›')
+SET IDENTITY_INSERT [dbo].[Cityes] OFF
+/****** Object:  Table [dbo].[Category]    Script Date: 01/03/2017 16:01:02 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Category](
+	[category_ID] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK_Category] PRIMARY KEY CLUSTERED 
+(
+	[category_ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Category] ON
+INSERT [dbo].[Category] ([category_ID], [name]) VALUES (1, N'›«ﬂÂÂ')
+INSERT [dbo].[Category] ([category_ID], [name]) VALUES (2, N'Œ÷—«Ê« ')
+SET IDENTITY_INSERT [dbo].[Category] OFF
+/****** Object:  Table [dbo].[Rate]    Script Date: 01/03/2017 16:01:02 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Rate](
+	[rate_ID] [int] IDENTITY(1,1) NOT NULL,
+	[comment] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK_Rate] PRIMARY KEY CLUSTERED 
+(
+	[rate_ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Masseges]    Script Date: 01/03/2017 16:01:02 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Masseges](
+	[MassegeID] [int] IDENTITY(1,1) NOT NULL,
+	[UserName] [nvarchar](max) NOT NULL,
+	[Email] [nvarchar](max) NOT NULL,
+	[Mobile] [nvarchar](50) NOT NULL,
+	[Masseges] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK_Masseges] PRIMARY KEY CLUSTERED 
+(
+	[MassegeID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Masseges] ON
+INSERT [dbo].[Masseges] ([MassegeID], [UserName], [Email], [Mobile], [Masseges]) VALUES (1, N'noha', N'noha@yahoo.com', N'0123456789', N'hfdkdkd')
+INSERT [dbo].[Masseges] ([MassegeID], [UserName], [Email], [Mobile], [Masseges]) VALUES (2, N'noha', N'noha@yahoo.com', N'0123456789', N'lllll')
+INSERT [dbo].[Masseges] ([MassegeID], [UserName], [Email], [Mobile], [Masseges]) VALUES (3, N'noha', N'noha@yahoo.com', N'0123456789', N'‘ﬂ—«')
+INSERT [dbo].[Masseges] ([MassegeID], [UserName], [Email], [Mobile], [Masseges]) VALUES (4, N'ahmed', N'ahmed@yahoo.com', N'0123456789', N'lddcidipvvpib')
+INSERT [dbo].[Masseges] ([MassegeID], [UserName], [Email], [Mobile], [Masseges]) VALUES (5, N'aasd', N'dsa@yahoo.com', N'01111111111', N'qdwqdw')
+SET IDENTITY_INSERT [dbo].[Masseges] OFF
+/****** Object:  Table [dbo].[Cart]    Script Date: 01/03/2017 16:01:02 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Cart](
+	[Cart_ID] [int] IDENTITY(1,1) NOT NULL,
+	[Customer_ID] [int] NOT NULL,
+ CONSTRAINT [PK_Cart] PRIMARY KEY CLUSTERED 
+(
+	[Cart_ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Cart] ON
+INSERT [dbo].[Cart] ([Cart_ID], [Customer_ID]) VALUES (1, 2)
+INSERT [dbo].[Cart] ([Cart_ID], [Customer_ID]) VALUES (2, 3)
+INSERT [dbo].[Cart] ([Cart_ID], [Customer_ID]) VALUES (3, 4)
+INSERT [dbo].[Cart] ([Cart_ID], [Customer_ID]) VALUES (4, 5)
+INSERT [dbo].[Cart] ([Cart_ID], [Customer_ID]) VALUES (5, 6)
+INSERT [dbo].[Cart] ([Cart_ID], [Customer_ID]) VALUES (6, 7)
+INSERT [dbo].[Cart] ([Cart_ID], [Customer_ID]) VALUES (11, 12)
+INSERT [dbo].[Cart] ([Cart_ID], [Customer_ID]) VALUES (12, 13)
+INSERT [dbo].[Cart] ([Cart_ID], [Customer_ID]) VALUES (13, 14)
+SET IDENTITY_INSERT [dbo].[Cart] OFF
+/****** Object:  StoredProcedure [dbo].[delecust]    Script Date: 01/03/2017 16:01:26 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create proc [dbo].[delecust]
+@id int
+AS
+begin
+update [dbo].[Customers]
+set Active=0
+where customer_ID=@id
+end
+GO
+/****** Object:  Table [dbo].[Quarter]    Script Date: 01/03/2017 16:01:02 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Quarter](
+	[QuarterID] [int] IDENTITY(1,1) NOT NULL,
+	[CItyID] [int] NOT NULL,
+	[QuarterName] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK_Quarter] PRIMARY KEY CLUSTERED 
+(
+	[QuarterID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Quarter] ON
+INSERT [dbo].[Quarter] ([QuarterID], [CItyID], [QuarterName]) VALUES (23, 1, N'«·Œ«·œÌÂ')
+INSERT [dbo].[Quarter] ([QuarterID], [CItyID], [QuarterName]) VALUES (24, 2, N'«·‘—ﬁÌ…')
+INSERT [dbo].[Quarter] ([QuarterID], [CItyID], [QuarterName]) VALUES (25, 2, N'«·⁄»«”ÌÂ')
+INSERT [dbo].[Quarter] ([QuarterID], [CItyID], [QuarterName]) VALUES (26, 1, N'«·ÕÏ «·‘—ﬁÏ')
+INSERT [dbo].[Quarter] ([QuarterID], [CItyID], [QuarterName]) VALUES (27, 3, N'«·ÕÏ «·€—»Ï')
+SET IDENTITY_INSERT [dbo].[Quarter] OFF
+/****** Object:  Table [dbo].[Product]    Script Date: 01/03/2017 16:01:02 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Product](
+	[product_ID] [int] IDENTITY(1,1) NOT NULL,
+	[productName] [nvarchar](max) NOT NULL,
+	[price] [nvarchar](max) NOT NULL,
+	[image] [nvarchar](max) NOT NULL,
+	[quantity] [nvarchar](max) NOT NULL,
+	[category_ID] [int] NOT NULL,
+	[DeleteProduct] [bit] NULL,
+	[CityID] [int] NULL,
+	[NoOrder] [int] NULL,
+ CONSTRAINT [PK_Product] PRIMARY KEY CLUSTERED 
+(
+	[product_ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Product] ON
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (2, N' ›«Õ', N'20', N'a.jpg', N'6', 1, 0, 1, 1)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (3, N'„«‰Ã«', N'30', N'm.jpg', N'7', 1, 0, 2, 3)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (4, N'ﬂ„À—Ï', N'59', N'k.jpg', N'9', 1, 1, 1, 5)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (5, N'ﬂÌÊÏ', N'50', N'Kiwi.jpg', N'6', 1, 1, 2, 1)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (6, N' ›«Õ «Õ„—', N'30', N'download.jpg', N'7', 1, 1, 2, 7)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (7, N'›—«Ê·…', N'60', N'download (1).jpg', N'6', 1, 1, 2, 5)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (8, N'»— ﬁ«·', N'30', N'download (2).jpg', N'8', 1, 1, 3, 8)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (9, N'Õ»Õ»', N'40', N'«·Õ»Õ»-«·»ÿÌŒ-›Ì-«·„‰«„.jpg', N'9', 1, 1, 3, 30)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (11, N'›Ã·', N'20', N'download (7).jpg', N'8', 2, 0, 1, 100)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (12, N'»ﬁœÊ‰”', N'50', N'download (9).jpg', N'7', 2, 0, 2, 49)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (14, N'„·ÊŒÌ…', N'70', N'download (10).jpg', N'9', 2, 0, 3, 80)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (16, N'⁄‰» «Õ„—', N'60', N'download (6).jpg', N'9', 1, 1, 3, 5)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (17, N'⁄‰» «Œ÷—', N'60', N'download (5).jpg', N'9', 1, 1, 2, 70)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (21, N'ŒÊŒ', N'50', N'’Ê—-ŒÊŒ-8-450x279.jpg', N'9', 1, 1, 2, 80)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (22, N'ﬂ“»—…', N'70', N'download (8).jpg', N'7', 2, 0, 3, 60)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (24, N'ﬂ“»—…', N'70', N'download (8).jpg', N'9', 2, 1, 1, 30)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (25, N'›Ã·', N'4', N'download (7).jpg', N'50', 2, 1, 2, 49)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (26, N'»ﬁœÊ‰”', N'37', N'download (9).jpg', N'6', 2, 1, 2, 60)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (27, N'„·ÊŒÌ…', N'37', N'download (10).jpg', N'9', 2, 1, 1, 80)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (28, N'ŒÌ«—', N'5', N'download (11).jpg', N'100', 2, 1, 1, 3)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (30, N'xmmx', N'20', N'download.jpg', N'12', 1, 0, 3, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (31, N'noha', N'80', N'„«‰ÃÊ.jpg', N'80', 1, 0, 2, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (32, N'ÌÌ ', N'40', N'„«‰ÃÊ.jpg', N'6', 2, 0, 3, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (33, N'ŒÊŒÏ', N'22', N'’Ê—-ŒÊŒ-8-450x279.jpg', N'22', 2, 0, 1, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (34, N'ŒÊŒ', N'22', N'’Ê—-ŒÊŒ-8-450x279.jpg', N'22', 1, 0, 1, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (35, N'»«‰ÃÊ', N'11', N'’Ê—-ŒÊŒ-8-450x279.jpg', N'22', 1, 0, 2, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (36, N'‘„«„', N'40', N'‘„«„.jpg', N'9', 1, 1, 3, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (37, N'„Ê“', N'7', N'„Ê“.jpg', N'8', 1, 1, 3, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (38, N'√›Êﬂ«œÊ', N'58', N'√›Êﬂ«œÊ.jpg', N'8', 1, 1, 2, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (39, N'„«‰Ã«', N'79', N'„«‰Ã«.jpg', N'70', 1, 1, 3, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (40, N' Ê  √Õ„—', N'90', N' Ê  √Õ„—.jpg', N'9', 1, 1, 2, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (41, N'ÌÊ”› «›‰œÌ', N'60', N'ÌÊ”› «›‰œÌ.jpg', N'87', 1, 1, 1, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (42, N' ›«Õ √Œ÷—', N'80', N' ›«Õ √Œ÷—.jpg', N'7', 1, 1, 2, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (43, N' Ê  √”Êœ', N'94', N' Ê  √”Êœ.jpg', N'8', 1, 1, 3, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (44, N'»ÿ«ÿ”', N'45', N'»ÿ«ÿ”.jpg', N'8', 2, 1, 3, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (45, N'ﬂ—›”', N'67', N'ﬂ—›”.jpg', N'3', 2, 1, 2, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (46, N'“‰Ã»Ì·', N'33', N'“‰Ã»Ì·.jpg', N'78', 2, 1, 3, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (47, N'Ã—ÃÌ—', N'43', N'Ã—ÃÌ—.jpg', N'33', 2, 1, 3, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (48, N'ÀÊ„', N'33', N'download.jpg', N'77', 2, 0, 2, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (49, N'ÀÊ„', N'32', N'download.jpg', N'3', 2, 0, 3, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (50, N'ÀÊ„', N'33', N'ÀÊ„.jpg', N'33', 2, 1, 2, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (51, N'ÿ„«ÿ„', N'33', N'ÿ„«ÿ„.jpg', N'8', 2, 1, 3, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (52, N'”»«‰Œ', N'33', N'”»«‰Œ.jpg', N'34', 2, 1, 2, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (53, N'›«’Ê·Ì«', N'44', N'download (3).jpg', N'43', 2, 1, 1, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (54, N'»—Êﬂ·Ì', N'44', N'download (4).jpg', N'33', 2, 1, 1, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (55, N'»’· √Œ÷—', N'33', N'download (5).jpg', N'3', 2, 0, 3, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (56, N'»’· √Œ÷—', N'33', N'download (5).jpg', N'44', 2, 0, 3, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (57, N'»’· √Œ÷—', N'44', N'»’· √Œ÷—.jpg', N'78', 2, 1, 2, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (58, N'‰⁄‰«⁄', N'67', N'download (6).jpg', N'8', 2, 0, 3, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (59, N'‰⁄‰«⁄', N'33', N'‰⁄‰«⁄.jpg', N'6', 2, 1, 3, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (60, N'·Ì„Ê‰ ﬂ»Ì—', N'44', N'·Ì„Ê‰ ﬂ»Ì—.jpg', N'44', 2, 1, 2, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (61, N'—Ã·…', N'67', N'—Ã·….jpg', N'33', 2, 1, 1, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (62, N'‘» ', N'44', N'‘» .jpg', N'36', 2, 1, 2, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (63, N'“Â—…', N'45', N'“Â—….jpg', N'78', 2, 1, 3, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (64, N'ﬁ—⁄', N'45', N'ﬁ—⁄.jpg', N'44', 2, 1, 2, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (65, N'ﬂÊ”Â', N'55', N'ﬂÊ”Â.jpg', N'8', 2, 1, 1, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (66, N'»«„Ì…', N'33', N'»«„Ì….jpg', N'33', 2, 1, 2, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (67, N'»‰Ã—', N'33', N'»‰Ã—.jpg', N'33', 2, 1, 1, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (68, N'Œ”', N'32', N'Œ”.jpg', N'44', 2, 1, 3, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (69, N'Ã“—', N'33', N'Ã“—.jpg', N'33', 2, 1, 2, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (70, N'»«–‰Ã«‰', N'67', N'»«–‰Ã«‰.jpg', N'22', 2, 1, 1, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (71, N'ﬂ—«À', N'35', N'ﬂ—«À.jpg', N'8', 2, 1, 3, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (72, N'›·›· —Ê„Ì', N'63', N'›·›· —Ê„Ì.jpg', N'44', 2, 1, 2, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (73, N'›·›· Õ«—', N'54', N'›·›· Õ«—.jpg', N'33', 2, 1, 2, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (74, N'„·›Ê› √Õ„—', N'67', N'„·›Ê› √Õ„—.jpg', N'33', 2, 1, 1, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (75, N'„·›Ê› √»Ì÷', N'67', N'„·›Ê› √»Ì÷.jpg', N'88', 2, 1, 3, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (76, N'»’· √Õ„—', N'44', N'»’· √Õ„—.jpg', N'8', 2, 1, 1, 0)
+INSERT [dbo].[Product] ([product_ID], [productName], [price], [image], [quantity], [category_ID], [DeleteProduct], [CityID], [NoOrder]) VALUES (77, N'»’· √»Ì÷', N'33', N'»’· √»Ì÷.jpg', N'44', 2, 1, 2, 0)
+SET IDENTITY_INSERT [dbo].[Product] OFF
+/****** Object:  Table [dbo].[Cart_Component]    Script Date: 01/03/2017 16:01:02 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Cart_Component](
+	[Cart_ComponentID] [int] IDENTITY(1,1) NOT NULL,
+	[Product_ID] [int] NOT NULL,
+	[quantity] [nvarchar](max) NULL,
+	[Total_Price] [nvarchar](max) NULL,
+	[Cart_ID] [int] NULL,
+ CONSTRAINT [PK_Cart_Component] PRIMARY KEY CLUSTERED 
+(
+	[Cart_ComponentID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Cart_Component] ON
+INSERT [dbo].[Cart_Component] ([Cart_ComponentID], [Product_ID], [quantity], [Total_Price], [Cart_ID]) VALUES (87, 6, N'1', N'30', 11)
+INSERT [dbo].[Cart_Component] ([Cart_ComponentID], [Product_ID], [quantity], [Total_Price], [Cart_ID]) VALUES (88, 5, N'1', N'50', 11)
+INSERT [dbo].[Cart_Component] ([Cart_ComponentID], [Product_ID], [quantity], [Total_Price], [Cart_ID]) VALUES (89, 41, N'1', N'60', 4)
+SET IDENTITY_INSERT [dbo].[Cart_Component] OFF
+/****** Object:  Table [dbo].[Order]    Script Date: 01/03/2017 16:01:02 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Order](
+	[order_ID] [int] IDENTITY(1,1) NOT NULL,
+	[customer_ID] [int] NOT NULL,
+	[CityID] [int] NOT NULL,
+	[driveDate] [datetime] NOT NULL,
+	[status] [nvarchar](50) NULL,
+	[mobile] [nvarchar](max) NULL,
+	[TotalPrice] [nvarchar](max) NULL,
+	[OrderNo] [nvarchar](50) NULL,
+	[longi] [float] NULL,
+	[lati] [float] NULL,
+	[QuarterID] [int] NULL,
+ CONSTRAINT [PK_Order] PRIMARY KEY CLUSTERED 
+(
+	[order_ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Order] ON
+INSERT [dbo].[Order] ([order_ID], [customer_ID], [CityID], [driveDate], [status], [mobile], [TotalPrice], [OrderNo], [longi], [lati], [QuarterID]) VALUES (16, 7, 2, CAST(0x0000A6E600000000 AS DateTime), N' „ «· ”·Ì„', N'01014352278', N' —Ì«· 187', N'1', 42.512969970703125, 18.222177165476367, NULL)
+INSERT [dbo].[Order] ([order_ID], [customer_ID], [CityID], [driveDate], [status], [mobile], [TotalPrice], [OrderNo], [longi], [lati], [QuarterID]) VALUES (17, 7, 3, CAST(0x0000A6E500000000 AS DateTime), N' „ «· ”·Ì„', N'01014352278', N' —Ì«· 210', N'2', 46.669921875, 24.577099744289431, NULL)
+INSERT [dbo].[Order] ([order_ID], [customer_ID], [CityID], [driveDate], [status], [mobile], [TotalPrice], [OrderNo], [longi], [lati], [QuarterID]) VALUES (18, 7, 1, CAST(0x0000A6E500000000 AS DateTime), N' „ «· ”·Ì„', N'01014352278', N' —Ì«· 355.5', N'3', 31.018238514661789, 30.554324301280392, NULL)
+INSERT [dbo].[Order] ([order_ID], [customer_ID], [CityID], [driveDate], [status], [mobile], [TotalPrice], [OrderNo], [longi], [lati], [QuarterID]) VALUES (19, 12, 1, CAST(0x0000A6E400000000 AS DateTime), N' „ «· ”·Ì„', N'0108928837', N' —Ì«· 353.5', N'4', 42.836380004882812, 18.360065003040717, NULL)
+INSERT [dbo].[Order] ([order_ID], [customer_ID], [CityID], [driveDate], [status], [mobile], [TotalPrice], [OrderNo], [longi], [lati], [QuarterID]) VALUES (20, 12, 3, CAST(0x0000A6EC00000000 AS DateTime), N'·„ Ì „ «· ”·Ì„', N'0108928837', N' —Ì«· 110', N'5', 46.69189453125, 24.577099744289431, NULL)
+INSERT [dbo].[Order] ([order_ID], [customer_ID], [CityID], [driveDate], [status], [mobile], [TotalPrice], [OrderNo], [longi], [lati], [QuarterID]) VALUES (21, 12, 1, CAST(0x0000A6EC00000000 AS DateTime), N'·„ Ì „ «· ”·Ì„', N'0108928837', N' —Ì«· 37', N'6', 46.47216796875, 23.372513822359469, NULL)
+INSERT [dbo].[Order] ([order_ID], [customer_ID], [CityID], [driveDate], [status], [mobile], [TotalPrice], [OrderNo], [longi], [lati], [QuarterID]) VALUES (22, 12, 3, CAST(0x0000A6E600000000 AS DateTime), N'·„ Ì „ «· ”·Ì„', N'0108928837', N' —Ì«· 120', N'7', 47.39501953125, 23.755181766112639, NULL)
+INSERT [dbo].[Order] ([order_ID], [customer_ID], [CityID], [driveDate], [status], [mobile], [TotalPrice], [OrderNo], [longi], [lati], [QuarterID]) VALUES (23, 12, 3, CAST(0x0000A6E400000000 AS DateTime), N'·„ Ì „ «· ”·Ì„', N'0108928837', N' —Ì«· 111', N'8', 47.30712890625, 21.79010705980787, NULL)
+INSERT [dbo].[Order] ([order_ID], [customer_ID], [CityID], [driveDate], [status], [mobile], [TotalPrice], [OrderNo], [longi], [lati], [QuarterID]) VALUES (24, 5, 3, CAST(0x0000A6DE00000000 AS DateTime), N'·„ Ì „ «· ”·Ì„', N'', N' —Ì«· 230', N'9', 47.491899076849222, 25.089612689386, NULL)
+INSERT [dbo].[Order] ([order_ID], [customer_ID], [CityID], [driveDate], [status], [mobile], [TotalPrice], [OrderNo], [longi], [lati], [QuarterID]) VALUES (25, 14, 3, CAST(0x0000A6DF00000000 AS DateTime), N'·„ Ì „ «· ”·Ì„', N'01008044665', N' «·≈Ã„«·Ì 120 —Ì«· ', N'10', 46.397510902024806, 25.171147817116907, NULL)
+INSERT [dbo].[Order] ([order_ID], [customer_ID], [CityID], [driveDate], [status], [mobile], [TotalPrice], [OrderNo], [longi], [lati], [QuarterID]) VALUES (26, 12, 3, CAST(0x0000A6EA00000000 AS DateTime), N'·„ Ì „ «· ”·Ì„', N'0108928837', N' «·≈Ã„«·Ì 80 —Ì«· ', N'11', 46.669921539723873, 24.505824759524081, NULL)
+INSERT [dbo].[Order] ([order_ID], [customer_ID], [CityID], [driveDate], [status], [mobile], [TotalPrice], [OrderNo], [longi], [lati], [QuarterID]) VALUES (27, 12, 1, CAST(0x0000A6EC00000000 AS DateTime), N'·„ Ì „ «· ”·Ì„', N'0108928837', N' «·≈Ã„«·Ì 249 —Ì«· ', N'12', 47.175292633473873, 26.292115857514823, NULL)
+INSERT [dbo].[Order] ([order_ID], [customer_ID], [CityID], [driveDate], [status], [mobile], [TotalPrice], [OrderNo], [longi], [lati], [QuarterID]) VALUES (28, 12, 1, CAST(0x0000A6DD00000000 AS DateTime), N'·„ Ì „ «· ”·Ì„', N'0108928837', N' «·≈Ã„«·Ì 59 —Ì«· ', N'13', 46.911620758473873, 22.328411751186852, 23)
+INSERT [dbo].[Order] ([order_ID], [customer_ID], [CityID], [driveDate], [status], [mobile], [TotalPrice], [OrderNo], [longi], [lati], [QuarterID]) VALUES (29, 12, 1, CAST(0x0000A6CE00000000 AS DateTime), N'·„ Ì „ «· ”·Ì„', N'0108928837', N' «·≈Ã„«·Ì 20 —Ì«· ', N'14', 47.768554352223873, 24.805365990622509, 26)
+SET IDENTITY_INSERT [dbo].[Order] OFF
+/****** Object:  StoredProcedure [dbo].[UpdateProduct]    Script Date: 01/03/2017 16:01:26 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+Create PROCEDURE [dbo].[UpdateProduct]
+    @id int,
+    
+    @price nvarchar(max),
+    @quantity nvarchar(max)
+
+    
+    
+AS
+BEGIN
+    UPDATe [dbo].[Product]
+	SET price=@price , quantity=@quantity
+	WHERE product_ID = @id
+	END
+GO
+/****** Object:  StoredProcedure [dbo].[SelectCity3]    Script Date: 01/03/2017 16:01:26 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE procedure [dbo].[SelectCity3]
+
+as
+begin
+select top 4 productName,price,image,product_ID
+from dbo.Product
+where CityID=3 and DeleteProduct='true'
+order by NEWID()
+end
+GO
+/****** Object:  StoredProcedure [dbo].[SelectCity2]    Script Date: 01/03/2017 16:01:26 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE procedure [dbo].[SelectCity2]
+
+as
+begin
+select top 4 productName,price,image,product_ID
+from dbo.Product
+where CityID=2 and DeleteProduct='true'
+order by NEWID()
+end
+GO
+/****** Object:  StoredProcedure [dbo].[SelectCity1]    Script Date: 01/03/2017 16:01:26 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE procedure [dbo].[SelectCity1]
+
+as
+begin
+select top 4 productName,price,image,product_ID
+from dbo.Product
+where CityID=1 and DeleteProduct='true'
+order by NEWID()
+end
+GO
+/****** Object:  StoredProcedure [dbo].[DeleteProduct]    Script Date: 01/03/2017 16:01:26 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+Create proc [dbo].[DeleteProduct]
+@product_ID int
+As
+Begin
+delete from [dbo].[Product] where [product_ID] = @product_ID
+End
+GO
+/****** Object:  StoredProcedure [dbo].[deletecart]    Script Date: 01/03/2017 16:01:26 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create proc [dbo].[deletecart]
+as
+begin
+delete from dbo.Cart_Component
+end
+GO
+/****** Object:  Table [dbo].[Order_Component]    Script Date: 01/03/2017 16:01:02 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Order_Component](
+	[Order_ComponentID] [int] IDENTITY(1,1) NOT NULL,
+	[Order_ID] [int] NOT NULL,
+	[Product_ID] [int] NOT NULL,
+	[quantity] [nvarchar](max) NOT NULL,
+	[TotalPrice] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK_Order_Component] PRIMARY KEY CLUSTERED 
+(
+	[Order_ComponentID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Order_Component] ON
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (32, 16, 16, N'2.5', N'150')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (33, 16, 27, N'1', N'37')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (34, 17, 16, N'3.5', N'210')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (35, 18, 28, N'4', N'88')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (36, 18, 27, N'2.5', N'92.5')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (37, 18, 24, N'2.5', N'175')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (38, 19, 5, N'3', N'150')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (39, 19, 27, N'5.5', N'203.5')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (40, 20, 16, N'1', N'60')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (41, 20, 21, N'1', N'50')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (42, 21, 27, N'1', N'37')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (43, 22, 16, N'2', N'120')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (44, 23, 27, N'3', N'111')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (45, 24, 9, N'2', N'80')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (46, 24, 16, N'2.5', N'150')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (47, 25, 7, N'2', N'120')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (48, 26, 3, N'1', N'30')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (49, 26, 5, N'1', N'50')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (50, 27, 5, N'1.5', N'75')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (51, 27, 3, N'1', N'30')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (52, 27, 21, N'1', N'50')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (53, 27, 25, N'1', N'4')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (54, 27, 6, N'1', N'30')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (55, 27, 17, N'1', N'60')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (56, 28, 4, N'1', N'59')
+INSERT [dbo].[Order_Component] ([Order_ComponentID], [Order_ID], [Product_ID], [quantity], [TotalPrice]) VALUES (57, 29, 2, N'1', N'20')
+SET IDENTITY_INSERT [dbo].[Order_Component] OFF
+/****** Object:  ForeignKey [FK_Cart_Customers]    Script Date: 01/03/2017 16:01:02 ******/
+ALTER TABLE [dbo].[Cart]  WITH CHECK ADD  CONSTRAINT [FK_Cart_Customers] FOREIGN KEY([Customer_ID])
+REFERENCES [dbo].[Customers] ([customer_ID])
+GO
+ALTER TABLE [dbo].[Cart] CHECK CONSTRAINT [FK_Cart_Customers]
+GO
+/****** Object:  ForeignKey [FK_Cart_Component_Cart]    Script Date: 01/03/2017 16:01:02 ******/
+ALTER TABLE [dbo].[Cart_Component]  WITH CHECK ADD  CONSTRAINT [FK_Cart_Component_Cart] FOREIGN KEY([Cart_ID])
+REFERENCES [dbo].[Cart] ([Cart_ID])
+GO
+ALTER TABLE [dbo].[Cart_Component] CHECK CONSTRAINT [FK_Cart_Component_Cart]
+GO
+/****** Object:  ForeignKey [FK_Cart_Component_Product]    Script Date: 01/03/2017 16:01:02 ******/
+ALTER TABLE [dbo].[Cart_Component]  WITH CHECK ADD  CONSTRAINT [FK_Cart_Component_Product] FOREIGN KEY([Product_ID])
+REFERENCES [dbo].[Product] ([product_ID])
+GO
+ALTER TABLE [dbo].[Cart_Component] CHECK CONSTRAINT [FK_Cart_Component_Product]
+GO
+/****** Object:  ForeignKey [FK_Order_Cityes]    Script Date: 01/03/2017 16:01:02 ******/
+ALTER TABLE [dbo].[Order]  WITH CHECK ADD  CONSTRAINT [FK_Order_Cityes] FOREIGN KEY([CityID])
+REFERENCES [dbo].[Cityes] ([CityID])
+GO
+ALTER TABLE [dbo].[Order] CHECK CONSTRAINT [FK_Order_Cityes]
+GO
+/****** Object:  ForeignKey [FK_Order_Quarter]    Script Date: 01/03/2017 16:01:02 ******/
+ALTER TABLE [dbo].[Order]  WITH CHECK ADD  CONSTRAINT [FK_Order_Quarter] FOREIGN KEY([QuarterID])
+REFERENCES [dbo].[Quarter] ([QuarterID])
+GO
+ALTER TABLE [dbo].[Order] CHECK CONSTRAINT [FK_Order_Quarter]
+GO
+/****** Object:  ForeignKey [FK_Order_Component_Order]    Script Date: 01/03/2017 16:01:02 ******/
+ALTER TABLE [dbo].[Order_Component]  WITH CHECK ADD  CONSTRAINT [FK_Order_Component_Order] FOREIGN KEY([Order_ID])
+REFERENCES [dbo].[Order] ([order_ID])
+GO
+ALTER TABLE [dbo].[Order_Component] CHECK CONSTRAINT [FK_Order_Component_Order]
+GO
+/****** Object:  ForeignKey [FK_Order_Component_Product]    Script Date: 01/03/2017 16:01:02 ******/
+ALTER TABLE [dbo].[Order_Component]  WITH CHECK ADD  CONSTRAINT [FK_Order_Component_Product] FOREIGN KEY([Product_ID])
+REFERENCES [dbo].[Product] ([product_ID])
+GO
+ALTER TABLE [dbo].[Order_Component] CHECK CONSTRAINT [FK_Order_Component_Product]
+GO
+/****** Object:  ForeignKey [FK_Product_Cityes]    Script Date: 01/03/2017 16:01:02 ******/
+ALTER TABLE [dbo].[Product]  WITH CHECK ADD  CONSTRAINT [FK_Product_Cityes] FOREIGN KEY([CityID])
+REFERENCES [dbo].[Cityes] ([CityID])
+GO
+ALTER TABLE [dbo].[Product] CHECK CONSTRAINT [FK_Product_Cityes]
+GO
+/****** Object:  ForeignKey [FK_Quarter_Cityes1]    Script Date: 01/03/2017 16:01:02 ******/
+ALTER TABLE [dbo].[Quarter]  WITH CHECK ADD  CONSTRAINT [FK_Quarter_Cityes1] FOREIGN KEY([CItyID])
+REFERENCES [dbo].[Cityes] ([CityID])
+GO
+ALTER TABLE [dbo].[Quarter] CHECK CONSTRAINT [FK_Quarter_Cityes1]
+GO

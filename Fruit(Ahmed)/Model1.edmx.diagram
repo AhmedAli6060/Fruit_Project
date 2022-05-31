@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d32ba7ebf66e49da8615d062401747ef" Name="Diagram1" ZoomLevel="101">
+        <EntityTypeShape EntityType="FruitModel.Cart" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="FruitModel.Cart_Component" Width="1.5" PointX="5.25" PointY="4.5" />
+        <EntityTypeShape EntityType="FruitModel.Category" Width="1.5" PointX="5.75" PointY="1.125" />
+        <EntityTypeShape EntityType="FruitModel.Citye" Width="1.5" PointX="0.75" PointY="6" />
+        <EntityTypeShape EntityType="FruitModel.Customer" Width="1.5" PointX="0.75" PointY="2" />
+        <EntityTypeShape EntityType="FruitModel.Massege" Width="1.5" PointX="7.75" PointY="1.125" />
+        <EntityTypeShape EntityType="FruitModel.Order" Width="1.5" PointX="5.25" PointY="8.125" />
+        <EntityTypeShape EntityType="FruitModel.Order_Component" Width="1.5" PointX="7.5" PointY="6.75" />
+        <EntityTypeShape EntityType="FruitModel.Product" Width="1.5" PointX="3" PointY="4" />
+        <EntityTypeShape EntityType="FruitModel.Quarter" Width="1.5" PointX="3" PointY="8" />
+        <EntityTypeShape EntityType="FruitModel.Rate" Width="1.5" PointX="7.75" PointY="4.125" />
+        <AssociationConnector Association="FruitModel.FK_Cart_Component_Cart" />
+        <AssociationConnector Association="FruitModel.FK_Cart_Customers" />
+        <AssociationConnector Association="FruitModel.FK_Cart_Component_Product" />
+        <AssociationConnector Association="FruitModel.FK_Order_Cityes" />
+        <AssociationConnector Association="FruitModel.FK_Product_Cityes" />
+        <AssociationConnector Association="FruitModel.FK_Quarter_Cityes1" />
+        <AssociationConnector Association="FruitModel.FK_Order_Component_Order" />
+        <AssociationConnector Association="FruitModel.FK_Order_Quarter" />
+        <AssociationConnector Association="FruitModel.FK_Order_Component_Product" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
